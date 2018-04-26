@@ -1,1 +1,39 @@
 
+---------Software details---------- 
+Language - Java
+IDE - Eclipse neon.2
+Operating System - Microsoft Windows 10
+
+---------To run program------------
+
+1. Copy the source files (Graph.java, Edge.java, and vertex.java) into your project.
+2. Copy the input text file and query file into the root directory of project.
+3. Compile the java file using following command 
+ 	javac Graph.java
+3. Run the Graph.java through command prompt. First parameter is input file (network.txt)
+   Name and second parameter is query file and third parameter is output file.
+E.g. Graph Network.txt <queries.txt> outputfile.txt
+4. You will see the output in a output file <output file> +".txt" into the root directory.
+ 
+
+------------Program Structure-----------------
+
+Variable: 
+1. Map<String, Vertex> vertices: Store name of vertex and object of vertex in the key value format.
+Main Functions: 
+1. AddEdge (String source, String destination, double distance): This function takes source and destination string and it’s weight and add new edge in the graph if it doesn’t exist and if it exist it will modify the weight.
+2. DeleteEdge(String source, String destination) : This function takes names of source and destination of vertex and delete that edge if it exist.
+3. PrintReachable() : This function will print the reachable vertices from each vertex in an alphabetical order.
+4. EdgeDown(String source , String destination) :This will put the status of particular edge as a “down”.
+5. EdgeUp(String source, String destination) : This will put the status of particular edge as a “up”.
+6.VertexUp(String name): This function will mark the vertex as a “up”
+7.VertextDown(String name) : This function will mark the vertex as a “down”
+8.FindShortestPath(String source, String destination): This function will use Dijkstra algorithm to find the shortest path between source and destination and it will print the path and distance.
+ 9.PrintAllvertices() : This function will print all vertices with their adjacent vertices in an alphabetical order.
+Classes in the project:
+1. Class Vertex: This will store the information about the vertex like name, previous vertex, it’s distance from source vertex and it’s adjacent vertices. 
+2. Class Edge: This will store the information about the second vertex of edge and it’s weight.
+3. Class MinHeap: This class have all function which will perform the essential operation to create, remove an element from heap and maintain Min-Heap.
+
+Time Complexity of Printing Reachable vertex:
+In my program I have use B.F.S. traversal by every vertex as a starting vertex so the time complexity for this algorithm is O (V*(|V| + |E|)) 
